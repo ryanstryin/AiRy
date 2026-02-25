@@ -1,32 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "AIRY — AI Business Transformation",
-  description: "AIRY is a digital marketing consultancy specializing in AI business transformation.",
+  title: "AIRY — From AI Speculation to Agentic Operations",
+  description:
+    "AIRY delivers two definitive pathways to agentic transformation: Enterprise-grade agent governance and small business agentic acceleration.",
+  metadataBase: new URL("https://airytransformation.com"),
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={inter.variable}>
+      <body className="bg-bg-base text-text-primary antialiased">
         {children}
       </body>
     </html>
