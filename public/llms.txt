@@ -1,0 +1,36 @@
+# AIRY
+
+> AIRY is an agentic systems architecture firm that transforms businesses from AI speculation to agentic operations. We build the operating layer that makes AI do the work — not just answer questions — delivering deployments in weeks, not quarters.
+
+AIRY runs two definitive pathways to agentic transformation: the **AIRY AI Accelerator** for small and mid-size businesses ready to deploy their first AI employee, and **AgentSpeak.io** for enterprises that need governance and protocol across complex multi-agent deployments.
+
+AIRY is not an AI consultancy. We do not deliver strategy decks or roadmaps. We install intelligence.
+
+## Pages
+
+- [Home](https://airytransformation.com/): Overview of AIRY's two transformation pathways, the AI adoption gap, and how AIRY differs from traditional consultancies.
+- [AIRY AI Accelerator](https://airytransformation.com/accelerator): Full details on the AI Accelerator product — Claude Cowork deployment, the 2-day sprint process, pricing ($2,000 setup + $200/month), security architecture, and ROI.
+- [About](https://airytransformation.com/about): AIRY's philosophy as agentic systems architects and the distinction between installing intelligence vs. delivering strategy documents.
+- [Contact](https://airytransformation.com/contact): Intake form for prospective clients. Responds within 24 hours.
+
+## Products
+
+### AIRY AI Accelerator
+A done-with-you program that deploys Claude Cowork — a secure, on-premise AI employee powered by Anthropic's Claude — in a 2-day sprint. Built for small businesses ready to move from AI chat to AI operations.
+
+- **Pricing:** $2,000 one-time setup + $200/month
+- **Delivery:** 2-day sprint (Day 1: discovery and configuration; Day 2: deployment and handoff)
+- **Technology:** Claude Cowork running locally via Headless Mac Bridge — no data sent to third-party servers
+- **Security:** Local processing, SOC 2 Type II infrastructure, zero data retention
+- **Target:** Small to mid-size businesses with operational bottlenecks suited to AI automation
+
+### AgentSpeak.io
+Enterprise-grade agent governance and protocol platform for organizations operating complex multi-agent deployments. Covers AEO (Agent Experience Optimization), GEO (Generative Engine Optimization), UCP (Unified Context Protocol), and MCP (Model Context Protocol) integration.
+
+- **Website:** https://agentspeak.io
+
+## Contact
+
+- **Website:** https://airytransformation.com
+- **Intake form:** https://airytransformation.com/contact
+- **Email:** support@airytransformation.com
