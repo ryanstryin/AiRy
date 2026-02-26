@@ -5,6 +5,7 @@ const config: Config = {
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
     "^next/link$": "<rootDir>/__mocks__/next-link.tsx",
+    "^next/server$": "<rootDir>/__mocks__/next-server.ts",
   },
   transform: {
     "^.+\\.tsx?$": ["ts-jest", { tsconfig: { jsx: "react-jsx" } }],
