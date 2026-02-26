@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { resend, buildContactEmail } from "@/lib/resend";
+import { getResend, buildContactEmail } from "@/lib/resend";
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       message,
     });
 
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: "AIRY Website <onboarding@resend.dev>",
       to: process.env.CONTACT_EMAIL!,
       replyTo: email,
