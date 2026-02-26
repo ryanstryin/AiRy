@@ -1,8 +1,19 @@
-export default function Home() {
+import { Hero } from "@/components/sections/home/Hero";
+import { ProblemStatement } from "@/components/sections/home/ProblemStatement";
+import { TwoProducts } from "@/components/sections/home/TwoProducts";
+import { DifferentiatorTable } from "@/components/sections/home/DifferentiatorTable";
+import { Testimonials } from "@/components/sections/home/Testimonials";
+import { FinalCTA } from "@/components/sections/home/FinalCTA";
+
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">AIRY</h1>
-      <p className="mt-4 text-lg text-gray-600">AI Business Transformation</p>
+    <main>
+      <Hero />
+      <ProblemStatement />
+      <TwoProducts />
+      <DifferentiatorTable />
+      <Testimonials />
+      <FinalCTA />
     </main>
   );
 }
