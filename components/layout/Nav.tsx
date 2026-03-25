@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 const navLinks = [
   { label: "Accelerator", href: "/accelerator" },
   { label: "Enterprise", href: "https://agentspeak.io", external: true },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

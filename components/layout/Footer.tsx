@@ -45,6 +45,7 @@ export function Footer() {
             <h3 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wider">Company</h3>
             <ul className="space-y-3">
               <li><Link href="/about" className="text-text-secondary hover:text-teal text-sm transition-colors">About</Link></li>
+              <li><Link href="/case-studies" className="text-text-secondary hover:text-teal text-sm transition-colors">Case Studies</Link></li>
               <li><Link href="/contact" className="text-text-secondary hover:text-teal text-sm transition-colors">Contact</Link></li>
               <li><a href="mailto:support@airytransformation.com" className="text-text-secondary hover:text-teal text-sm transition-colors">support@airytransformation.com</a></li>
             </ul>
