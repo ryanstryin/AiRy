@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Accelerator", href: "/accelerator" },
   { label: "Enterprise", href: "https://agentspeak.io", external: true },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "Brand Portfolio", href: "/brand-portfolio" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

@@ -10,6 +10,7 @@ AIRY is not an AI consultancy. We do not deliver strategy decks or roadmaps. We 
 
 - [Home](https://airytransformation.com/): Overview of AIRY's two transformation pathways, the AI adoption gap, and how AIRY differs from traditional consultancies.
 - [AIRY AI Accelerator](https://airytransformation.com/accelerator): Full details on the AI Accelerator product — Claude Cowork deployment, the 2-day sprint process, pricing ($2,000 setup + $200/month), security architecture, and ROI.
+- [Brand Portfolio](https://airytransformation.com/brand-portfolio): 100+ brands across 14 industries — two decades of SEO, digital strategy, and AI-driven growth for category-defining companies.
 - [About](https://airytransformation.com/about): AIRY's philosophy as agentic systems architects and the distinction between installing intelligence vs. delivering strategy documents.
 - [Contact](https://airytransformation.com/contact): Intake form for prospective clients. Responds within 24 hours.
 
