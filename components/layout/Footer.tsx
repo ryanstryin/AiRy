@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ryanpitcheralle/" },
@@ -12,9 +13,15 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-teal">AIRY</span>
-            </div>
+            <Link href="/" className="inline-block mb-4" aria-label="AIRY home">
+              <Image
+                src="/brand/airy-logo.png"
+                alt="AIRY"
+                width={391}
+                height={160}
+                className="h-10 w-auto"
+              />
+            </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6">
               Deployed Intelligence. Not speculation. Not strategy documents. Operating systems.
             </p>
@@ -36,7 +43,9 @@ export function Footer() {
           <div>
             <h3 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wider">Products</h3>
             <ul className="space-y-3">
+              <li><Link href="/blueprint" className="text-text-secondary hover:text-teal text-sm transition-colors">The AIRY Blueprint</Link></li>
               <li><Link href="/accelerator" className="text-text-secondary hover:text-teal text-sm transition-colors">AI Accelerator</Link></li>
+              <li><Link href="/contact?path=agentops&source=footer" className="text-text-secondary hover:text-teal text-sm transition-colors">AgentOps Partner</Link></li>
               <li><a href="https://agentspeak.io" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-teal text-sm transition-colors">AgentSpeak.io ↗</a></li>
             </ul>
           </div>

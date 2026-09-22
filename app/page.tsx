@@ -1,6 +1,6 @@
 import { Hero } from "@/components/sections/home/Hero";
 import { ProblemStatement } from "@/components/sections/home/ProblemStatement";
-import { TwoProducts } from "@/components/sections/home/TwoProducts";
+import { ThreePaths } from "@/components/sections/shared/ThreePaths";
 import { DifferentiatorTable } from "@/components/sections/home/DifferentiatorTable";
 import { Testimonials } from "@/components/sections/home/Testimonials";
 import { FinalCTA } from "@/components/sections/home/FinalCTA";
@@ -10,7 +10,7 @@ export default function HomePage() {
     <main>
       <Hero />
       <ProblemStatement />
-      <TwoProducts />
+      <ThreePaths source="home" />
       <DifferentiatorTable />
       <Testimonials />
       <FinalCTA />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 interface FormState {
@@ -10,6 +10,10 @@ interface FormState {
   employees: string;
   bottleneck: string;
   message: string;
+  path: string;
+  aiStage: string;
+  layer: string;
+  source: string;
 }
 
 const initialState: FormState = {
@@ -19,7 +23,48 @@ const initialState: FormState = {
   employees: "",
   bottleneck: "",
   message: "",
+  path: "",
+  aiStage: "",
+  layer: "",
+  source: "contact",
 };
+
+const pathOptions = [
+  { value: "accelerator", label: "AI Accelerator" },
+  { value: "agentops", label: "AgentOps Partner" },
+  { value: "enterprise", label: "Enterprise (AgentSpeak.io)" },
+  { value: "general", label: "Not sure yet" },
+];
+
+const aiStageOptions = [
+  "Experimenting with chat tools",
+  "A few automations running",
+  "Agents in production, no system",
+  "We need agents to find and transact with us",
+];
+
+const layerOptions = [
+  "Shared brain",
+  "Workflows",
+  "Authority content",
+  "Growth engine",
+  "Visibility",
+  "Not sure",
+];
+
+const SOURCE_PATTERN = /^[a-z0-9-]{1,100}$/i;
+
+/** Reads ?path= and ?source= from the URL (client only; avoids a Suspense boundary). */
+function readQueryPrefill(): Partial<Pick<FormState, "path" | "source">> {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const prefill: Partial<Pick<FormState, "path" | "source">> = {};
+  const path = params.get("path");
+  if (path && pathOptions.some((o) => o.value === path)) prefill.path = path;
+  const source = params.get("source");
+  if (source && SOURCE_PATTERN.test(source)) prefill.source = source;
+  return prefill;
+}
 
 const bottleneckOptions = [
   "Data Entry & Document Processing",
@@ -35,6 +80,13 @@ export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    const prefill = readQueryPrefill();
+    if (prefill.path || prefill.source) {
+      setForm((prev) => ({ ...prev, ...prefill }));
+    }
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -62,7 +114,7 @@ export function ContactForm() {
       }
 
       setStatus("success");
-      setForm(initialState);
+      setForm((prev) => ({ ...initialState, path: prev.path, source: prev.source }));
     } catch {
       setStatus("error");
       setErrorMsg("Network error. Please check your connection and try again.");
@@ -84,6 +136,28 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+      <input type="hidden" name="source" value={form.source} />
+
+      <div>
+        <label htmlFor="path" className="block text-sm text-text-secondary mb-1.5">
+          What are you interested in?
+        </label>
+        <select
+          id="path"
+          name="path"
+          value={form.path}
+          onChange={handleChange}
+          className={fieldClass}
+        >
+          <option value="">Select one</option>
+          {pathOptions.map((o) => (
+            <option key={o.value} value={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="block text-sm text-text-secondary mb-1.5">
@@ -156,7 +230,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="bottleneck" className="block text-sm text-text-secondary mb-1.5">
-          Biggest Operational Bottleneck
+          Biggest operational bottleneck
         </label>
         <select
           id="bottleneck"
@@ -172,6 +246,47 @@ export function ContactForm() {
             </option>
           ))}
         </select>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="aiStage" className="block text-sm text-text-secondary mb-1.5">
+            Where is AI today?
+          </label>
+          <select
+            id="aiStage"
+            name="aiStage"
+            value={form.aiStage}
+            onChange={handleChange}
+            className={fieldClass}
+          >
+            <option value="">Select one</option>
+            {aiStageOptions.map((o) => (
+              <option key={o} value={o}>
+                {o}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label htmlFor="layer" className="block text-sm text-text-secondary mb-1.5">
+            Which layer hurts most?
+          </label>
+          <select
+            id="layer"
+            name="layer"
+            value={form.layer}
+            onChange={handleChange}
+            className={fieldClass}
+          >
+            <option value="">Select one</option>
+            {layerOptions.map((o) => (
+              <option key={o} value={o}>
+                {o}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div>

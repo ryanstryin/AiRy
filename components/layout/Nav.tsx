@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
+  { label: "Blueprint", href: "/blueprint" },
   { label: "Accelerator", href: "/accelerator" },
-  { label: "Enterprise", href: "https://agentspeak.io", external: true },
+  { label: "Enterprise ↗", href: "https://agentspeak.io", external: true },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Brand Portfolio", href: "/brand-portfolio" },
   { label: "About", href: "/about" },
@@ -32,8 +34,15 @@ export function Nav() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tight text-text-primary">
-          <span className="text-teal">AIRY</span>
+        <Link href="/" className="flex items-center shrink-0" aria-label="AIRY home">
+          <Image
+            src="/brand/airy-logo.png"
+            alt="AIRY"
+            width={391}
+            height={160}
+            priority
+            className="h-8 w-auto"
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">

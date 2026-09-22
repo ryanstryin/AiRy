@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AIRY — From AI Speculation to Agentic Operations",
   description:
-    "AIRY delivers two definitive pathways to agentic transformation: Enterprise-grade agent governance and small business agentic acceleration.",
+    "AIRY delivers three definitive pathways to agentic transformation: the AIRY Blueprint and an embedded AgentOps Partner, enterprise-grade agent governance, and small business agentic acceleration.",
   metadataBase: new URL("https://airytransformation.com"),
 };
 

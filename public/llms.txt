@@ -35,3 +35,8 @@ Enterprise-grade agent governance and protocol platform for organizations operat
 - **Website:** https://airytransformation.com
 - **Intake form:** https://airytransformation.com/contact
 - **Email:** support@airytransformation.com
+
+## The AIRY Blueprint
+
+- [The AIRY Blueprint](https://airytransformation.com/blueprint): The operating system for AI-native teams, in five layers: a shared brain, designed workflows, authority content, a growth engine and verified visibility, run by a forward-deployed Agent Operations Partner.
+- [The New Digital Credibility Stack](https://airytransformation.com/blueprint/digital-credibility-stack): Layer 05 (verified visibility). How AI search is eroding the click, and how Google Search Profiles, badged Local Guide reviews and verifiable digital badges turn human signal into visibility.

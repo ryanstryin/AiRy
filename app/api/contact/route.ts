@@ -1,8 +1,23 @@
 import { NextResponse } from "next/server";
-import { getResend, buildContactEmail } from "@/lib/resend";
+import { getResend, getFromAddress, buildContactEmail, type ContactPath } from "@/lib/resend";
+
+const VALID_PATHS: readonly ContactPath[] = ["accelerator", "agentops", "enterprise", "general"];
+const MAX_OPTIONAL_LENGTH = 100;
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function cleanOptional(value: unknown, max = MAX_OPTIONAL_LENGTH): string | undefined {
+  if (typeof value !== "string") return undefined;
+  const trimmed = value.trim().slice(0, max);
+  return trimmed || undefined;
+}
+
+function cleanPath(value: unknown): ContactPath | undefined {
+  return typeof value === "string" && (VALID_PATHS as readonly string[]).includes(value)
+    ? (value as ContactPath)
+    : undefined;
 }
 
 export async function POST(req: Request) {
@@ -31,10 +46,16 @@ export async function POST(req: Request) {
       employees,
       bottleneck,
       message,
+      path: cleanPath(body.path),
+      aiStage: cleanOptional(body.aiStage),
+      layer: cleanOptional(body.layer),
+      source: cleanOptional(body.source),
     });
 
+    // Sender comes from RESEND_FROM; the airytransformation.com domain must be
+    // verified in Resend before leads receive mail from it.
     const { error } = await getResend().emails.send({
-      from: "AIRY Website <onboarding@resend.dev>",
+      from: getFromAddress(),
       to: process.env.CONTACT_EMAIL!,
       replyTo: email,
       subject,
