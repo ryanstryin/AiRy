@@ -30,6 +30,11 @@ body {
   }
 }
 
+/* Fixed 68px header: keep anchor targets clear of it */
+[id] {
+  scroll-margin-top: 88px;
+}
+
 .dot-grid {
   background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
   background-size: 32px 32px;
