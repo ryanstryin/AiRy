@@ -75,12 +75,17 @@ export function ThreePaths({
                     cardStyles[card.accent],
                   )}
                 >
-                  {/* Fixed height so the headings and labels line up across all three cards. */}
-                  <div className="min-h-[28px] flex items-center justify-between gap-3 mb-2">
+                  {/* Fixed height, and the pill sits out of the flow, so the headings and
+                      labels line up across all three cards at every width. */}
+                  {card.isNew && (
+                    <Badge variant="purple" className="absolute top-7 right-6 bg-purple text-white border-purple">
+                      New
+                    </Badge>
+                  )}
+                  <div className="min-h-[28px] flex items-center pr-16 mb-2">
                     <span className="text-[11px] sm:text-xs text-text-tertiary uppercase tracking-wider">
                       {card.eyebrow}
                     </span>
-                    {card.isNew && <Badge variant="purple" className="bg-purple text-white border-purple">New</Badge>}
                   </div>
                   <h3 className="text-2xl font-bold text-text-primary mb-4">{card.name}</h3>
 

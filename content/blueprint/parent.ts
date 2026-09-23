@@ -234,7 +234,7 @@ export const threePaths = {
       },
       {
         id: "agentops",
-        eyebrow: "For Growth-Stage & Mid-Market",
+        eyebrow: "For Growth-Stage Teams",
         name: "Agent Operations Partner",
         isNew: true,
         forWho: "Growth-stage and mid-market teams that have AI tools but no AI operating system.",
