@@ -39,7 +39,7 @@ export const hero = {
   body: "AI made output cheap. Trust got expensive. The AIRY Blueprint is the operating system for companies that want their AI to run on what only they have: their people, their judgment and their experience.",
   primaryCta: { label: AGENTOPS_CTA_LABEL, href: agentOpsHref("blueprint") },
   secondaryCta: { label: "Get the Blueprint (PDF) →", href: "#get-the-blueprint" },
-  tagline: "Deployed intelligence. Not speculation. Not strategy documents. Operating systems.",
+  tagline: "Deployed Intelligence. Not speculation. Not strategy documents. Operating systems.",
   // Quotable definition placed under the hero and repeated in schema.
   definition:
     "The AIRY Blueprint is a five-layer operating system for AI-native companies: a shared brain, designed workflows, authority content, a growth engine and verified visibility. Humans decide, AI executes, humans approve, and the brain remembers.",
@@ -49,15 +49,17 @@ export const whyNow = {
   heading: "Three shifts every leadership team is feeling.",
   cards: [
     {
-      stat: "8%",
+      number: "01",
       headline: "The click is disappearing.",
       body: "When AI summaries appear, click rates fall to around 8%. Organic search is no longer a guaranteed traffic engine.",
     },
     {
+      number: "02",
       headline: "Chatbots aren't a strategy.",
       body: "Handing every employee a chatbot makes them faster, not smarter. Speed without a connected company brain only scales chaos.",
     },
     {
+      number: "03",
       headline: "Generic content is free.",
       body: "If an LLM can guess it, you don't own it. Anything AI can write without you is a commodity.",
     },
@@ -395,7 +397,7 @@ export const leadMagnet = {
   guide: "the-airy-blueprint",
   eyebrow: "The AIRY Blueprint (PDF)",
   heading: "Get the Blueprint.",
-  body: "Name, work email and company. The PDF arrives instantly, and we'll follow up in two days with an invitation to an AgentOps Briefing.",
+  body: "Name, work email and company. We'll email you the link right away, and follow up in two days with an invitation to an AgentOps Briefing.",
 };
 
 export const finalCta = {

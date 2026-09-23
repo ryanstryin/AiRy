@@ -1,5 +1,6 @@
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { Button } from "@/components/ui/Button";
+import { AGENTOPS_CTA_LABEL } from "@/content/blueprint/parent";
 import type { BlueprintChild } from "@/content/blueprint/children/types";
 
 export function ChildHero({ child }: { child: BlueprintChild }) {
@@ -28,12 +29,12 @@ export function ChildHero({ child }: { child: BlueprintChild }) {
           </AnimateIn>
           <AnimateIn delay={0.3}>
             <div className="flex flex-wrap gap-4">
-              <Button href="#guide">Read the guide</Button>
+              <Button href="#guide">Read the guide →</Button>
               <Button
                 href={`/contact?path=agentops&source=blueprint-${child.slug}`}
                 variant="secondary"
               >
-                Book a Briefing →
+                {AGENTOPS_CTA_LABEL}
               </Button>
             </div>
           </AnimateIn>

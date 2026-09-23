@@ -75,7 +75,8 @@ export function ThreePaths({
                     cardStyles[card.accent],
                   )}
                 >
-                  <div className="flex items-center justify-between gap-3 mb-2">
+                  {/* Fixed height so the headings and labels line up across all three cards. */}
+                  <div className="min-h-[28px] flex items-center justify-between gap-3 mb-2">
                     <span className="text-[11px] sm:text-xs text-text-tertiary uppercase tracking-wider">
                       {card.eyebrow}
                     </span>

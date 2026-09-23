@@ -30,11 +30,11 @@ export function FinalCTA() {
 
           <div className="border border-purple/50 bg-purple/10 rounded-2xl p-8 flex flex-col">
             <p className="text-[11px] sm:text-xs text-text-tertiary uppercase tracking-wider mb-2">
-              New · Forward-deployed
+              Growth-Stage &amp; Mid-Market
             </p>
-            <h3 className="text-xl font-bold mb-2">AgentOps Partner</h3>
+            <h3 className="text-xl font-bold mb-2">Embedded. Accountable. Ongoing.</h3>
             <p className="text-sm text-text-secondary mb-6 flex-1">
-              Your AI operations team, embedded in your business.
+              The AgentOps Partner: your AI operations team, embedded in your business.
             </p>
             <Button
               href="/contact?path=agentops&source=home-final"

@@ -16,6 +16,7 @@ export function PatternGuardrails() {
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative" aria-label="The AIRY loop">
             {pattern.loop.map((step, i) => {
               const isHuman = step.actor === "Human";
+              const isLast = i === pattern.loop.length - 1;
               return (
                 <li key={`${step.actor}-${step.verb}`} className="relative">
                   <div
@@ -29,12 +30,15 @@ export function PatternGuardrails() {
                     <p className="text-2xl font-bold text-text-primary mb-2">{step.verb}</p>
                     <p className="text-sm text-text-secondary">{step.detail}</p>
                   </div>
-                  <span
-                    className="hidden lg:flex absolute top-1/2 -right-3 -translate-y-1/2 z-10 text-text-tertiary"
-                    aria-hidden="true"
-                  >
-                    {i < pattern.loop.length - 1 ? "→" : "↺"}
-                  </span>
+                  {/* The last card has nothing to its right; the caption below carries the ↺. */}
+                  {!isLast && (
+                    <span
+                      className="hidden lg:flex absolute top-1/2 -right-3 -translate-y-1/2 z-10 text-text-tertiary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  )}
                 </li>
               );
             })}

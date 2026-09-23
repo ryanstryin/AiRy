@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { leadMagnet } from "@/content/blueprint/parent";
 
 interface GuideFormState {
   name: string;
@@ -30,6 +31,8 @@ export function BlueprintForm({ guide, showHeading = true }: { guide: string; sh
   const [errorMsg, setErrorMsg] = useState("");
 
   const guideHref = `/blueprint/guides/${guide}.html`;
+  // The parent Blueprint is named explicitly; child guides stay generic.
+  const submitLabel = guide === leadMagnet.guide ? "Email me the Blueprint →" : "Email me the guide →";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -185,7 +188,7 @@ export function BlueprintForm({ guide, showHeading = true }: { guide: string; sh
           disabled={status === "loading"}
           className="w-full justify-center py-4"
         >
-          {status === "loading" ? "Sending..." : "Email me the guide →"}
+          {status === "loading" ? "Sending..." : submitLabel}
         </Button>
       </form>
     </div>

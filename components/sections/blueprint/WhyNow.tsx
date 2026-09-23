@@ -14,15 +14,9 @@ export function WhyNow() {
           {whyNow.cards.map((card, i) => (
             <AnimateIn key={card.headline} delay={i * 0.12} className="h-full">
               <div className="border border-bg-border bg-bg-surface rounded-2xl p-8 h-full">
-                {"stat" in card && card.stat ? (
-                  <p className="text-display-l font-bold text-purple mb-4" aria-hidden="true">
-                    {card.stat}
-                  </p>
-                ) : (
-                  <p className="text-display-l font-bold text-text-tertiary mb-4" aria-hidden="true">
-                    0{i + 1}
-                  </p>
-                )}
+                <p className="text-display-l font-bold text-text-tertiary mb-4" aria-hidden="true">
+                  {card.number}
+                </p>
                 <h3 className="text-xl font-bold text-text-primary mb-3">{card.headline}</h3>
                 <p className="text-text-secondary leading-relaxed">{card.body}</p>
               </div>

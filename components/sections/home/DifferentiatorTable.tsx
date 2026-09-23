@@ -3,6 +3,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+const columnLabels = {
+  traditional: "Traditional AI Consulting",
+  airy: "AIRY",
+};
+
 const rows = [
   { label: "Delivery", traditional: "Open-ended strategy decks", airy: "Defined products: AgentSpeak.io or AI Accelerator" },
   { label: "Outcome", traditional: "Recommendations", airy: "Deployed, functioning agentic systems" },
@@ -27,11 +32,12 @@ export function DifferentiatorTable() {
           <h2 className="text-display-l font-bold mb-4">Why AIRY Isn't Another AI Consultancy</h2>
         </motion.div>
 
-        <div className="border border-bg-border rounded-2xl overflow-hidden">
+        {/* Desktop / tablet: three-column table */}
+        <div className="hidden md:block border border-bg-border rounded-2xl overflow-hidden">
           <div className="grid grid-cols-3 bg-bg-surface px-6 py-4">
             <div />
-            <div className="text-sm text-text-tertiary uppercase tracking-wider">Traditional AI Consulting</div>
-            <div className="text-sm text-teal uppercase tracking-wider font-semibold">AIRY</div>
+            <div className="text-sm text-text-tertiary uppercase tracking-wider">{columnLabels.traditional}</div>
+            <div className="text-sm text-teal uppercase tracking-wider font-semibold">{columnLabels.airy}</div>
           </div>
 
           {rows.map((row, i) => (
@@ -45,6 +51,35 @@ export function DifferentiatorTable() {
               <div className="text-sm font-semibold text-text-primary">{row.label}</div>
               <div className="text-sm text-text-secondary pr-4">{row.traditional}</div>
               <div className="text-sm text-text-primary font-medium">{row.airy}</div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile: one stacked card per row */}
+        <div className="md:hidden space-y-4">
+          {rows.map((row, i) => (
+            <motion.div
+              key={row.label}
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+              className="border border-bg-border rounded-2xl bg-bg-surface/40 p-5"
+            >
+              <h3 className="text-base font-semibold text-text-primary mb-4">{row.label}</h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-[11px] text-text-tertiary uppercase tracking-wider mb-1">
+                    {columnLabels.traditional}
+                  </p>
+                  <p className="text-sm text-text-secondary">{row.traditional}</p>
+                </div>
+                <div>
+                  <p className="text-[11px] text-teal uppercase tracking-wider font-semibold mb-1">
+                    {columnLabels.airy}
+                  </p>
+                  <p className="text-sm text-text-primary font-medium">{row.airy}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

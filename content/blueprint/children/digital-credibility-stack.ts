@@ -26,7 +26,7 @@ export const digitalCredibilityStack: BlueprintChild = {
       "Each audience has its own verification mechanism, and each mechanism serves a distinct goal. The common thread is systemized, verifiable human signal.",
     items: [
       {
-        label: "Layer 01",
+        label: "Audience 01",
         title: "Brands & creators",
         desc: "A claimed profile turns a branded search into a follow, and the follow feeds your content into Google Discover.",
         attributes: [
@@ -38,7 +38,7 @@ export const digitalCredibilityStack: BlueprintChild = {
         ],
       },
       {
-        label: "Layer 02",
+        label: "Audience 02",
         title: "Local businesses",
         desc: "Algorithms can't verify hours, menus or photos on their own. Maps runs on human truth, formalized through the Local Guide program.",
         attributes: [
@@ -50,7 +50,7 @@ export const digitalCredibilityStack: BlueprintChild = {
         ],
       },
       {
-        label: "Layer 03",
+        label: "Audience 03",
         title: "Professionals",
         desc: "A paper certificate is a static image. A digital badge carries metadata anyone can check.",
         attributes: [
